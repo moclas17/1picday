@@ -7,6 +7,13 @@ import { Logo } from "@/components/logo"
 import { Camera, Calendar, Shield, Film, Grid3x3, ImageIcon } from "lucide-react"
 
 export default function Home() {
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id)
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" })
+    }
+  }
+
   return (
     <main className="min-h-screen" style={{ backgroundColor: "var(--paper)", color: "var(--ink)" }}>
       <header className="fixed top-0 left-0 right-0 p-6 z-50 flex justify-between items-center">
@@ -32,6 +39,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
             <Button
               size="lg"
+              onClick={() => scrollToSection("waitlist")}
               className="text-lg px-8 py-6 transition-opacity hover:opacity-90"
               style={{
                 backgroundColor: "var(--moss)",
@@ -44,6 +52,7 @@ export default function Home() {
             <Button
               size="lg"
               variant="outline"
+              onClick={() => scrollToSection("how-it-works")}
               className="text-lg px-8 py-6 transition-all bg-transparent hover:opacity-80"
               style={{
                 backgroundColor: "transparent",
@@ -61,7 +70,7 @@ export default function Home() {
       </section>
 
       {/* How it works */}
-      <section className="px-6 py-24" style={{ backgroundColor: "var(--paper)" }}>
+      <section id="how-it-works" className="px-6 py-24" style={{ backgroundColor: "var(--paper)" }}>
         <div className="max-w-5xl mx-auto">
           <h2
             className="text-3xl md:text-4xl font-light text-center mb-16 text-balance"
@@ -258,7 +267,7 @@ export default function Home() {
       </section>
 
       {/* Final CTA */}
-      <section className="px-6 py-32" style={{ backgroundColor: "var(--ink)", color: "var(--paper)" }}>
+      <section id="waitlist" className="px-6 py-32" style={{ backgroundColor: "var(--ink)", color: "var(--paper)" }}>
         <div className="max-w-3xl mx-auto text-center space-y-8">
           <h2 className="text-4xl md:text-6xl font-light text-balance">One pic a day. Forever.</h2>
           <Button

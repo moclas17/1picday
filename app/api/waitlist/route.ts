@@ -53,6 +53,12 @@ export async function POST(request: NextRequest) {
 
       if (insertError) {
         console.error("[Waitlist] Supabase insert error:", insertError)
+
+        // Check if it's a unique constraint violation (duplicate email)
+        if (insertError.code === '23505' || insertError.message?.includes('duplicate') || insertError.message?.includes('unique')) {
+          return NextResponse.json({ error: "This email is already on the waitlist" }, { status: 400 })
+        }
+
         throw new Error("Failed to save to database")
       }
 
