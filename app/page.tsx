@@ -65,6 +65,17 @@ export default function Home() {
           </div>
           <div className="pt-8">
             <WaitlistForm variant="light" />
+            <div className="mt-6">
+              <a
+                href="https://forms.gle/QAYyanTDfNLaP6QQ9"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm hover:underline transition-all"
+                style={{ color: "var(--ash)" }}
+              >
+                Want to help more? Answer the 2-minute survey →
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -283,6 +294,17 @@ export default function Home() {
           </Button>
           <div className="pt-4">
             <WaitlistForm variant="dark" />
+            <div className="mt-6">
+              <a
+                href="https://forms.gle/QAYyanTDfNLaP6QQ9"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm hover:underline transition-all"
+                style={{ color: "rgba(255, 255, 255, 0.7)" }}
+              >
+                Want to help more? Answer the 2-minute survey →
+              </a>
+            </div>
           </div>
         </div>
       </section>
