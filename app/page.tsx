@@ -3,12 +3,14 @@
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { WaitlistForm } from "@/components/waitlist-form"
+import { Logo } from "@/components/logo"
 import { Camera, Calendar, Shield, Film, Grid3x3, ImageIcon } from "lucide-react"
 
 export default function Home() {
   return (
     <main className="min-h-screen" style={{ backgroundColor: "var(--paper)", color: "var(--ink)" }}>
-      <header className="fixed top-0 right-0 p-6 z-50">
+      <header className="fixed top-0 left-0 right-0 p-6 z-50 flex justify-between items-center">
+        <Logo width={160} height={32} style={{ color: "var(--ink)" }} />
         <ThemeToggle />
       </header>
 
